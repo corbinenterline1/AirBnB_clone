@@ -8,11 +8,11 @@ This is a command line interpreter to manage our Holberton AirBnB clone objects.
 * Update attributes of an object
 * Destroy an object
 
-The command line interpreter puts in place a parent class (called `BaseModel`) to take care of the initialization, serialization, & deserialization of futureinstances. It creates a simple flow of serialization/deserialization: 
+The command line interpreter puts in place a parent class (called [BaseModel](models/base_model.py)) to take care of the initialization, serialization, & deserialization of future instances. It creates a simple flow of serialization/deserialization: 
 
 `Instance <-> Dictionary <-> JSON string <-> file`
 
-The interpreter creates all classes used for AirBnB ([User](models/user.py), [State](models/state.py), [City](models/city.py), [Place](models/place.py)...) that inherit from `BaseModel`.
+The interpreter creates all classes used for AirBnB ([User](models/user.py), [State](models/state.py), [City](models/city.py), [Place](models/place.py)...) that inherit from [BaseModel](models/base_model.py).
 
 In this project we also created the first abstracted storage engine for the project: [File Storage](models/engine/file_storage.py), as well as created [Unittests](/test/) to validate all the classes & storage engine.
 
