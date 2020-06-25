@@ -1,4 +1,60 @@
  # 0x00 - AirBnB clone - The Console
+
+This is a command line interpreter to manage our Holberton AirBnB clone objects. Functionality includes:
+
+* Create a new object (ex: a new User or a new Place)
+* Retrieve an object from a file, a database, etc...
+* Do operations on objects (count, compute stats, etc..)
+* Update attributes of an object
+* Destroy an object
+
+The command line interpreter puts in place a parent class (called `BaseModel`) to take care of the initialization, serialization, & deserialization of futureinstances. It creates a simple flow of serialization/deserialization: 
+
+`Instance <-> Dictionary <-> JSON string <-> file`
+
+The interpreter creates all classes used for AirBnB ([User](models/user.py), [State](models/state.py), [City](models/city.py), [Place](models/place.py)...) that inherit from `BaseModel`.
+
+In this project we also created the first abstracted storage engine for the project: [File Storage](models/engine/file_storage.py), as well as created [Unittests](/test/) to validate all the classes & storage engine.
+
+ ## Usage
+
+The interpreter works like this in interactive mode:
+```
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb)
+(hbnb)
+(hbnb) quit
+$
+```
+Non-interactive mode:
+```
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+```
+
 Task # | Short Description
 -------|------------
 [Task 0](AUTHORS) | Authors file & README for the project.
