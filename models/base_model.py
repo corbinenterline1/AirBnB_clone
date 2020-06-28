@@ -3,6 +3,7 @@
 this module creates BaseModel class with public attributes and methods
 """
 from datetime import datetime
+""" from models.engine import storage _ MAY NOT NEED """
 from uuid import uuid4
 
 
@@ -16,6 +17,7 @@ class BaseModel:
         """
         this method is constructor for BaseModel
         """
+        from models.engine import storage
         if len(kwargs) != 0:
             for key, val in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
@@ -26,6 +28,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new() """ unsure about placement """
 
     def __str__(self):
         """
@@ -38,7 +41,9 @@ class BaseModel:
         """
         this PUBLIC method updates PUB instance attr updated_at
         """
+        from models.engine import storage
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
