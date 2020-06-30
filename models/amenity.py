@@ -1,19 +1,16 @@
 #!/usr/bin/python3
 """
-class User Module.
+class Amenity Module.
 """
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
+class Amenity(BaseModel):
     """
-    User Class inherits from BaseModel.
+    Amenity class inherits from BaseModel.
     """
 
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    name = ""
 
     def __init__(self, *args, **kwargs):
         """
