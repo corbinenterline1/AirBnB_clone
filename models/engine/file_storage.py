@@ -47,7 +47,9 @@ class FileStorage:
         only IF JSON file __file_path exists ELSE
         do nothing - IF __file_path does not exist NO EXCEPTION
         """
-        all_classes = {"BaseModel": BaseModel}
+        all_classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                "City": City, "Amenity": Amenity, "Place": Place,
+                "Review": Review}
         try:
             with open(self.__file_path, 'r') as f:
                 g = f.read()
