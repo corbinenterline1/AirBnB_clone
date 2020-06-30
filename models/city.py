@@ -1,19 +1,17 @@
 #!/usr/bin/python3
 """
-class User Module.
+class City Module.
 """
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
+class City(BaseModel):
     """
-    User Class inherits from BaseModel.
+    City class inherits from BaseModel.
     """
 
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    state_id = ""
+    name = ""
 
     def __init__(self, *args, **kwargs):
         """

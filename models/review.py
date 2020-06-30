@@ -1,19 +1,18 @@
 #!/usr/bin/python3
 """
-class User Module.
+class Review Module.
 """
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
+class Review(BaseModel):
     """
-    User Class inherits from BaseModel.
+    Review class inherits from BaseModel.
     """
 
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    place_id = ""
+    user_id = ""
+    text = ""
 
     def __init__(self, *args, **kwargs):
         """
