@@ -20,6 +20,13 @@ class TestAmenity(unittest.TestCase):
         self.tamen_a = Amenity()
         self.tamen_b = Amenity()
 
+    def tearDown(self):
+        """
+        delete test cases
+        """
+        del self.tamen_a
+        del self.tamen_b
+
     def test_testobjs(self):
         """
         Make sure objects exist

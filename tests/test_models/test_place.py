@@ -20,6 +20,13 @@ class TestPlace(unittest.TestCase):
         self.tplac_a = Place()
         self.tplac_b = Place()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.tplac_a
+        del self.tplac_b
+
     def test_testobjs(self):
         """
         Make sure objects exist

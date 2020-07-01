@@ -21,6 +21,13 @@ class TestBaseModel(unittest.TestCase):
         self.tbm_a = BaseModel()
         self.tbm_b = BaseModel()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.tbm_a
+        del self.tbm_b
+
     def test_testobjs(self):
         """
         For each test object:

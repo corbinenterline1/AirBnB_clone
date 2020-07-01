@@ -20,6 +20,13 @@ class TestState(unittest.TestCase):
         self.tstate_a = State()
         self.tstate_b = State()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.tstate_a
+        del self.tstate_b
+
     def test_testobjs(self):
         """
         Make sure objects exist
