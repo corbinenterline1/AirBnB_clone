@@ -25,7 +25,7 @@ $ ./console.py
 
 Documented commands (type help <topic>):
 ========================================
-EOF  help  quit
+EOF  all  create  destroy  help  quit  show  update
 
 (hbnb)
 (hbnb)
@@ -39,7 +39,7 @@ $ echo "help" | ./console.py
 
 Documented commands (type help <topic>):
 ========================================
-EOF  help  quit
+EOF  all  create  destroy  help  quit  show  update
 (hbnb)
 $
 $ cat test_help
@@ -50,7 +50,7 @@ $ cat test_help | ./console.py
 
 Documented commands (type help <topic>):
 ========================================
-EOF  help  quit
+EOF  all  create  destroy  help  quit  show  update
 (hbnb)
 $
 ```
