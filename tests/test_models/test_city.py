@@ -20,6 +20,13 @@ class TestCity(unittest.TestCase):
         self.tcit_a = City()
         self.tcit_b = City()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.tcit_a
+        del self.tcit_b
+
     def test_testobjs(self):
         """
         Make sure objects exist

@@ -20,6 +20,13 @@ class TestReview(unittest.TestCase):
         self.trev_a = Review()
         self.trev_b = Review()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.trev_a
+        del self.trev_b
+
     def test_testobjs(self):
         """
         Make sure objects exist

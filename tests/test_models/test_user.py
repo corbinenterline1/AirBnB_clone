@@ -20,6 +20,13 @@ class TestUser(unittest.TestCase):
         self.tuser_a = User()
         self.tuser_b = User()
 
+    def tearDown(self):
+        """
+        deletes test cases
+        """
+        del self.tuser_a
+        del self.tuser_b
+
     def test_testobjs(self):
         """
         Make sure objects exist
