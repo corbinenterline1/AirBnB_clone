@@ -4,8 +4,6 @@ this module creates a class FileStorage that serializes instances to JSON
 and deserializes JSON file to instance
 """
 import json
-import models
-from console import all_classes
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -55,12 +53,15 @@ class FileStorage:
         only IF JSON file __file_path exists ELSE
         do nothing - IF __file_path does not exist NO EXCEPTION
         """
+        my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                      "City": City, "Amenity": Amenity, "Place": Place,
+                      "Review": Review}
         try:
             with open(self.__file_path, 'r') as f:
                 g = f.read()
                 data = json.loads(g)
                 for key in list(data.keys()):
-                    self.__objects[key] = all_classes[data[key]['__class__']](
+                    self.__objects[key] = my_classes[data[key]['__class__']](
                         **data[key])
         except FileNotFoundError:
             pass

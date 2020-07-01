@@ -6,7 +6,7 @@ to the commmand line interpreter
 import cmd
 from datetime import datetime
 import json
-import models
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
@@ -71,7 +71,6 @@ class HBNBCommand(cmd.Cmd):
         prints ths string representation of an instance
         based on the class name and id
         """
-        from models import storage
         parse = args.split(" ")
         if not args:
             print("** class name missing **")
@@ -91,7 +90,6 @@ class HBNBCommand(cmd.Cmd):
         deletes an instance based on the class name and id
         saves change into the JSON file
         """
-        from models import storage
         parse = args.split(" ")
         if not args:
             print("** class name missing **")
@@ -112,7 +110,6 @@ class HBNBCommand(cmd.Cmd):
         prints all string representation of all instances
         based or not on the class name
         """
-        from models import storage
         parse = args.split(" ")
         inst = []
         if not args:
@@ -134,7 +131,6 @@ class HBNBCommand(cmd.Cmd):
         updates an instance based on the class name and id
         by adding/updating attribute (save chance in JSON file)
         """
-        from models import storage
         parse = args.split(" ")
         if not args:
             print("** class name missing **")
