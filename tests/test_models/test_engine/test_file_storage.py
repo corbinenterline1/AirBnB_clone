@@ -3,6 +3,9 @@
 Unittest for class FileStorage
 """
 import json
+import os
+import pep8
+import unittest
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -10,9 +13,6 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-import os
-import pep8
-import unittest
 
 
 class TestFileStorage(unittest.TestCase):
@@ -43,30 +43,18 @@ class TestFileStorage(unittest.TestCase):
     def test_all(self):
         """ test for functionality class method all() """
         result = FileStorage.__objects
-        self.assertEqual(result, 
+        self.assertIsInstance(result, dict)
 
     def test_new_exists(self):
         """ test for available class method new() """
-        self.assertTrue(hasattr(self.file_sto1, "new"))
-
-    def test_new(self):
-        """ test for functionality class method new() """
         self.assertTrue(hasattr(self.file_sto1, "new"))
 
     def test_save_exists(self):
         """ test for available class method save() """
         self.assertTrue(hasattr(self.file_sto1, "save"))
 
-    def test_save(self):
-        """ test for functionality class method save() """
-        self.assertTrue(hasattr(self.file_sto1, "save"))
-
     def test_reload_exists(self):
         """ test for available class method reload() """
-        self.assertTrue(hasattr(self.file_sto1, "reload"))
-
-    def test_reload(self):
-        """ test for class method reload() """
         self.assertTrue(hasattr(self.file_sto1, "reload"))
 
 if __name__ == '__main__':
