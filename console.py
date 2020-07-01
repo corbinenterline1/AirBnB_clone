@@ -6,7 +6,7 @@ to the commmand line interpreter
 import cmd
 from datetime import datetime
 import json
-from models import storage
+import models
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
@@ -18,8 +18,8 @@ import shlex
 import sys
 
 
-all_classes = {"BaseModel": BaseModel,  "User": User, "State": State,
-               "City": City, "Amenity": Amenity, "Place": Place}
+all_classes = {"BaseModel": BaseModel, "User": User, "State": State, "City":
+               City, "Amenity": Amenity, "Place": Place, "Review": Review}
 
 
 class HBNBCommand(cmd.Cmd):
@@ -27,6 +27,7 @@ class HBNBCommand(cmd.Cmd):
     this method defines a new class HBNBCommand inheritance from cmd module
     """
     prompt = '(hbnb) '
+    file = None
 
     def emptyline(self):
         """
@@ -53,10 +54,10 @@ class HBNBCommand(cmd.Cmd):
         creates new instance of BaseModel
         saves to JSON file then prints the id
         """
+        parse = args.split(" ")
         if not args:
             print("** class name missing **")
-        parse = args.split(" ")
-        if parse[0] in all_classes:
+        elif parse[0] in all_classes:
             for key, val in all_classes.items():
                 if key == parse[0]:
                     new_inst = all_classes[key]()
@@ -70,10 +71,11 @@ class HBNBCommand(cmd.Cmd):
         prints ths string representation of an instance
         based on the class name and id
         """
+        from models import storage
+        parse = args.split(" ")
         if not args:
             print("** class name missing **")
-        parse = args.split(" ")
-        if parse[0] not in all_classes:
+        elif parse[0] not in all_classes:
             print("** class doesn't exist **")
         elif len(parse) < 2:
             print("** instance id missing **")
@@ -89,6 +91,7 @@ class HBNBCommand(cmd.Cmd):
         deletes an instance based on the class name and id
         saves change into the JSON file
         """
+        from models import storage
         parse = args.split(" ")
         if not args:
             print("** class name missing **")
@@ -109,6 +112,7 @@ class HBNBCommand(cmd.Cmd):
         prints all string representation of all instances
         based or not on the class name
         """
+        from models import storage
         parse = args.split(" ")
         inst = []
         if not args:
@@ -130,18 +134,19 @@ class HBNBCommand(cmd.Cmd):
         updates an instance based on the class name and id
         by adding/updating attribute (save chance in JSON file)
         """
+        from models import storage
+        parse = args.split(" ")
         if not args:
             print("** class name missing **")
-        parse = args.split(" ")
-        if parse[0] not in all_classes:
+        elif parse[0] not in all_classes:
             print("** class doesn't exist **")
         elif len(parse) < 2:
             print("** instance id missing **")
         elif "{}.{}".format(parse[0], parse[1]) not in storage.all():
             print("** no instance found **")
-        elif not parse[2]:
+        elif len(parse) == 2:
             print("** attribute name missing **")
-        elif parse[2] and not parse[3]:
+        elif len(parse) == 3:
             print("** value missing **")
         else:
             for key, val in storage.all().items():
