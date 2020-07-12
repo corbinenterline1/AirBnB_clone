@@ -9,15 +9,15 @@ This project revolves around building the front-end of our site, step-by-step. T
 
 Task # | Short Description
 -------|------------
-[Task 0](0-index.html) | HTML page that displays a header & a footer.
-[Task 1](1-index.html) | HTML page with same layout as 0, but using the `style` tag in the `head` tag.
-[Task 2](2-index.html) | HTML page that displays a header & footer by using CSS files.
-[Task 3](3-index.html) | Same as 2, but additional requirements.
-[Task 4](4-index.html) | Same as 3, but with a filters box with a search function.
-[Task 5](5-index.html) | Same as 4, but with additional requirements.
-[Task 6](6-index.html) | Same as 5, but the filters box has a dropdown.
-[Task 7](7-index.html) | Same as 6, but with results.
-[Task 8](8-index.html) | Same as 7, but with additional requirements.
+[Task 0](0-index.html) | Basic webpage that displays a header & a footer using inline CSS.
+[Task 1](1-index.html) | Basic webpage from 0 using internal CSS.
+[Task 2](2-index.html) | Basic webpage from 0 using external CSS.
+[Task 3](3-index.html) | Spruce up the page to the modern age.
+[Task 4](4-index.html) | Add a search to the page.
+[Task 5](5-index.html) | Add a filter box to search.
+[Task 6](6-index.html) | Contextual drop-down filter menu.
+[Task 7](7-index.html) | Add results from search to page.
+[Task 8](8-index.html) | Add information to each of the results
 
  ## Lessons Learned
 * What is HTML
