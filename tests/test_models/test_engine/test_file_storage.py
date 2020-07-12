@@ -20,10 +20,16 @@ class TestFileStorage(unittest.TestCase):
     defines TestFileStorage, test class for unittests
     """
     def setUp(self):
+        """
+        setup test cases
+        """
         self.file_sto1 = FileStorage()
 
     def tearDown(self):
-        del file_sto1
+        """
+        deletes test cases
+        """
+        del self.file_sto1
 
     def test_style_pep8(self):
         """ test files for pep8 style """
